@@ -9,7 +9,8 @@ const variants = cva(
   {
     variants: {
       variant: {
-        default: "bg-brand text-white hover:bg-brand/90",
+        default:
+          "bg-brand text-white shadow-md hover:bg-brand/90 hover:shadow-lg",
         secondary: "border border-border bg-card text-foreground hover:bg-muted",
         ghost: "hover:bg-muted",
         outline: "border border-border bg-transparent hover:bg-muted"

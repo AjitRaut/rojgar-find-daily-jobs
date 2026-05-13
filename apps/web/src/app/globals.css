@@ -4,33 +4,73 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 220 20% 98%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --brand: 244 47% 54%;
-    --ring: 244 47% 54%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --brand: 258 65% 52%;
+    --ring: 258 65% 52%;
+    --accent: 258 65% 96%;
+    --accent-foreground: 258 65% 30%;
     --radius: 0.75rem;
   }
 
   .dark {
     --background: 224 71% 4%;
     --foreground: 210 40% 98%;
-    --card: 224 47% 8%;
+    --card: 224 47% 9%;
     --card-foreground: 210 40% 98%;
     --muted: 217 33% 14%;
     --muted-foreground: 215 20% 65%;
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --brand: 239 62% 58%;
-    --ring: 239 62% 58%;
+    --brand: 262 72% 62%;
+    --ring: 262 72% 62%;
+    --accent: 262 35% 18%;
+    --accent-foreground: 262 72% 85%;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand/25 text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-mesh {
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--brand) / 0.18), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, hsl(280 60% 50% / 0.1), transparent),
+      radial-gradient(ellipse 50% 30% at 0% 100%, hsl(200 70% 50% / 0.08), transparent);
+  }
+
+  .dark .bg-mesh {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--brand) / 0.25), transparent),
+      radial-gradient(ellipse 60% 40% at 100% 0%, hsl(280 55% 45% / 0.12), transparent),
+      radial-gradient(ellipse 50% 30% at 0% 100%, hsl(200 60% 40% / 0.1), transparent);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand via-violet-500 to-cyan-500 bg-clip-text text-transparent;
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+      linear-gradient(135deg, hsl(var(--brand) / 0.5), hsl(280 60% 55% / 0.35), hsl(190 70% 45% / 0.35)) border-box;
   }
 }

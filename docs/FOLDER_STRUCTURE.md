@@ -1,0 +1,29 @@
+# Folder Structure
+
+```text
+rojgar-find-daily-jobs/
+  apps/
+    api/
+      app/
+        api/v1/endpoints/
+        core/
+        db/
+        models/
+        schemas/
+        services/
+      requirements.txt
+      .env.example
+    web/
+      src/
+        app/
+        components/
+        lib/
+      package.json
+      .env.local.example
+  docs/
+    ARCHITECTURE.md
+    DATABASE_SCHEMA.md
+  infra/
+    render.yaml
+  README.md
+```

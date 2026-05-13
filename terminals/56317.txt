@@ -1,0 +1,12 @@
+---
+cwd: "C:\\Users\\HP\\.cursor\\projects\\empty-window\\apps\\api"
+command: ".venv\\Scripts\\python -m uvicorn app.main:app --host 0.0.0.0 --port 8000"
+started_at: 2026-05-09T16:44:09.352Z
+running_for_ms: 3        
+---
+
+---
+error: "EPERM: operation not permitted, open 'C:\\Users\\HP\\AppData\\Local\\Temp\\ps-script-775b3491-9795-4d99-bd5d-5e535febf737.ps1'"
+elapsed_ms: 8
+ended_at: 2026-05-09T16:44:09.360Z
+---
